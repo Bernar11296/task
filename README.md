@@ -2,6 +2,7 @@
 ## Usage
 To run app in command line type:
 ```
-$ make run
+$ make build
+$ make run-container
 
 ```
