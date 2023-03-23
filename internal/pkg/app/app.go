@@ -21,10 +21,9 @@ func New() *App {
 	a.s = service.New()
 	a.e = endpoint.New(a.s)
 	a.echo = echo.New()
-
-	a.echo.Use(mw.RoleCheck)
-
-	a.echo.GET("/status", a.e.Status)
+	a.echo.GET("/hello", a.e.Hello)
+	a.echo.GET("/status", a.e.Status, mw.RoleCheck)
+	a.echo.POST("/status", a.e.Status, mw.RoleCheck)
 	return a
 }
 
